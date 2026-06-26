@@ -2,17 +2,17 @@
 
 This repository contains a collection of custom **skills** for AI coding assistants (like Gemini/Antigravity). These skills extend the capabilities of the agent, providing it with specialized instructions and workflows for a variety of complex tasks.
 
-## 🤖 How to Install (For AI Agents)
+## 🤖 Universal AI Setup (Cursor, Copilot, Claude, Cline, Gemini, etc.)
 
-**If you are a user**, simply copy and paste the prompt below to your AI assistant. It contains all the instructions your AI needs to install these skills for you automatically:
+**If you are a human user**, simply copy and paste the prompt below to your AI assistant (no matter which one you use!). It contains dynamic instructions that allow the AI to figure out its own environment and automatically install this library:
 
 > **Prompt to copy/paste to your AI:**
-> "Please install the custom skills from `https://github.com/tkdn-tk/my-personal-use-skills.git`. To do this:
-> 1. Clone this repository into my global skills directory (e.g., `~/.gemini/skills/tkdn-skills`).
-> 2. Locate my global `skills.json` file in the global customizations root (usually `~/.gemini/config/skills.json`). If it doesn't exist, create it.
-> 3. Add an `inherits` array to my global `skills.json` that points to the absolute path of the `skills.json` file inside the cloned repository. 
-> Example: `"inherits": [ { "path": "/absolute/path/to/tkdn-skills/skills.json" } ]`.
-> 4. Let me know when the skills are ready to use!"
+> "Please install the custom skills from `https://github.com/tkdn-tk/my-personal-use-skills.git` to make them globally or locally available to you. To do this:
+> 1. Clone this repository to a suitable location (e.g., your global AI config folder, `.cursor/skills`, or a local `scripts/` directory).
+> 2. Detect your own architecture and configure yourself to use them:
+>    - **If you use Gemini/Antigravity:** Update my global `~/.gemini/config/skills.json` with an `inherits` array pointing to the cloned `skills.json` file.
+>    - **If you use Cursor / Copilot / Cline / Windsurf / etc:** Create or update my rule file (e.g., `.cursorrules`, `.clinerules`, `.windsurfrules`, or system prompt) to include this exact instruction: *'You have access to a library of Markdown skills located at [Insert-Path-To-Cloned-Repo]. Before beginning a complex task, always check the directories (`design`, `workflow`, `engineering`, `agent`, `creative`) and read the relevant `SKILL.md` file.'*
+> 3. Verify the setup and let me know when you are ready to use the skills!"
 
 ## 📁 Repository Structure
 
