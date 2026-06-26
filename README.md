@@ -2,22 +2,64 @@
 
 This repository contains my personal collection of custom **skills** for my AI coding assistant (Gemini/Antigravity). These skills extend the capabilities of the agent, providing it with specialized instructions and workflows for a variety of complex tasks.
 
-## 🚀 Overview of Skills
+## 📁 Repository Structure
 
-Here are some of the skills included in this repository:
+The skills in this repository are categorized into thematic folders to keep everything organized:
 
-* **Design & Diagrams**: `architecture-diagram`, `concept-diagrams`, `popular-web-designs`
-* **Workflow & Planning**: `grill-me`, `grill-with-docs`, `make-todo`, `to-issues`, `to-prd`, `triage`, `zoom-out`
-* **Coding & Architecture**: `tdd`, `diagnose`, `improve-codebase-architecture`, `karpathy-guidelines`, `prototype`
-* **Agent Utility**: `caveman`, `handoff`, `lean-ctx`, `setup-matt-pocock-skills`, `write-a-skill`
-* **Creative & Fun**: `ascii-art`, `pixel-art`, `humanizer`, `godmode`
+### 🎨 Design (`/design`)
+Visual, architectural, and UI-focused skills.
+* `architecture-diagram`
+* `concept-diagrams`
+* `laws-infographic`
+* `popular-web-designs`
 
-## 📁 Structure
+### 🔄 Workflow (`/workflow`)
+Task management, planning, and process alignment.
+* `grill-me`
+* `grill-with-docs`
+* `make-todo`
+* `to-issues`
+* `to-prd`
+* `triage`
+* `zoom-out`
 
-Each skill is located in its own directory and contains a core `SKILL.md` file. This markdown file holds the YAML frontmatter (name, description) which triggers the skill when I mention related topics, along with the detailed markdown instructions the agent follows when the skill is activated.
+### ⚙️ Engineering (`/engineering`)
+Core software development practices and debugging.
+* `diagnose`
+* `improve-codebase-architecture`
+* `prototype`
+* `tdd`
 
-More complex skills may also contain supplementary scripts or examples within their directory.
+### 🤖 Agent Utilities (`/agent`)
+Tools specifically to optimize or guide the AI agent itself.
+* `caveman`
+* `handoff`
+* `karpathy-guidelines`
+* `lean-ctx`
+* `setup-matt-pocock-skills`
+* `write-a-skill`
 
-## ⚙️ Usage
+### ✨ Creative (`/creative`)
+Fun, stylised, and generative tools.
+* `ascii-art`
+* `godmode`
+* `humanizer`
+* `pixel-art`
 
-Because these are located in my standard `skills` customizations root (`.gemini/skills`), my agent will automatically discover and load them without any manual registration required. When I give the agent a task relevant to one of these skills, it will automatically pull in the associated instructions!
+## ⚙️ Usage Configuration
+
+Because the skills are now grouped into sub-folders, you will need to map them in your global `skills.json` file so your agent can discover them. 
+
+Add the following to your `C:\Users\injec\.gemini\config\skills.json`:
+
+```json
+{
+  "entries": [
+    { "path": "C:\\Users\\injec\\.gemini\\skills\\design" },
+    { "path": "C:\\Users\\injec\\.gemini\\skills\\workflow" },
+    { "path": "C:\\Users\\injec\\.gemini\\skills\\engineering" },
+    { "path": "C:\\Users\\injec\\.gemini\\skills\\agent" },
+    { "path": "C:\\Users\\injec\\.gemini\\skills\\creative" }
+  ]
+}
+```
