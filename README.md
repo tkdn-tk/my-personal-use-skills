@@ -1,10 +1,22 @@
 # My Personal Agent Skills
 
-This repository contains my personal collection of custom **skills** for my AI coding assistant (Gemini/Antigravity). These skills extend the capabilities of the agent, providing it with specialized instructions and workflows for a variety of complex tasks.
+This repository contains a collection of custom **skills** for AI coding assistants (like Gemini/Antigravity). These skills extend the capabilities of the agent, providing it with specialized instructions and workflows for a variety of complex tasks.
+
+## 🤖 How to Install (For AI Agents)
+
+**If you are a user**, simply copy and paste the prompt below to your AI assistant. It contains all the instructions your AI needs to install these skills for you automatically:
+
+> **Prompt to copy/paste to your AI:**
+> "Please install the custom skills from `https://github.com/tkdn-tk/my-personal-use-skills.git`. To do this:
+> 1. Clone this repository into my global skills directory (e.g., `~/.gemini/skills/tkdn-skills`).
+> 2. Locate my global `skills.json` file in the global customizations root (usually `~/.gemini/config/skills.json`). If it doesn't exist, create it.
+> 3. Add an `inherits` array to my global `skills.json` that points to the absolute path of the `skills.json` file inside the cloned repository. 
+> Example: `"inherits": [ { "path": "/absolute/path/to/tkdn-skills/skills.json" } ]`.
+> 4. Let me know when the skills are ready to use!"
 
 ## 📁 Repository Structure
 
-The skills in this repository are categorized into thematic folders to keep everything organized:
+The skills in this repository are categorized into thematic folders:
 
 ### 🎨 Design (`/design`)
 Visual, architectural, and UI-focused skills.
@@ -46,20 +58,14 @@ Fun, stylised, and generative tools.
 * `humanizer`
 * `pixel-art`
 
-## ⚙️ Usage Configuration
+## ⚙️ Usage Configuration (Manual)
 
-Because the skills are now grouped into sub-folders, you will need to map them in your global `skills.json` file so your agent can discover them. 
-
-Add the following to your `C:\Users\injec\.gemini\config\skills.json`:
+If you prefer to configure this manually instead of asking your AI, clone this repository and add its `skills.json` to your global `skills.json` configuration using the `inherits` property:
 
 ```json
 {
-  "entries": [
-    { "path": "C:\\Users\\injec\\.gemini\\skills\\design" },
-    { "path": "C:\\Users\\injec\\.gemini\\skills\\workflow" },
-    { "path": "C:\\Users\\injec\\.gemini\\skills\\engineering" },
-    { "path": "C:\\Users\\injec\\.gemini\\skills\\agent" },
-    { "path": "C:\\Users\\injec\\.gemini\\skills\\creative" }
+  "inherits": [
+    { "path": "/absolute/path/to/where/you/cloned/this/repo/skills.json" }
   ]
 }
 ```
