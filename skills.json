@@ -1,0 +1,9 @@
+{
+  "entries": [
+    { "path": "design" },
+    { "path": "workflow" },
+    { "path": "engineering" },
+    { "path": "agent" },
+    { "path": "creative" }
+  ]
+}
