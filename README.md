@@ -62,12 +62,28 @@ Fun, stylised, and generative tools.
 
 ## ⚙️ Usage Configuration (Manual)
 
-If you prefer to configure this manually instead of asking your AI, clone this repository and add its `skills.json` to your global `skills.json` configuration using the `inherits` property:
+If you prefer to configure this manually instead of having your AI do it, follow the steps below for your specific setup:
+
+### For Gemini / Antigravity
+Clone this repository and add its `skills.json` to your global `~/.gemini/config/skills.json` configuration using the `inherits` property. Your JSON file should look like this:
 
 ```json
 {
+  "entries": [
+    // ... any of your existing personal skills ...
+  ],
   "inherits": [
     { "path": "/absolute/path/to/where/you/cloned/this/repo/skills.json" }
   ]
 }
+```
+
+### For Cursor / Copilot / Cline / Windsurf
+Since these agents do not use a `skills.json` file, you need to tell them where to find the markdown instructions. 
+
+Create a `.cursorrules` (for Cursor), `.clinerules` (for Cline), or system prompt file at the root of your project, and add this exact text:
+
+```markdown
+# AI Agent Skill Library
+You have access to a library of Markdown skills located at `[Insert-Path-To-Cloned-Repo]`. Before beginning a complex task, always check the directories (`design`, `workflow`, `engineering`, `agent`, `creative`) and read the relevant `SKILL.md` file to learn how to proceed.
 ```
